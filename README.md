@@ -6,10 +6,14 @@ Elasticsearch provides near real-time search and analytics for all types of data
 
 # Elasticsearch Installation using Ansible on AWS Instance, configuring Elasticsearch, install nginx and configure SSL. 
 
- Step1 : Create an EC2 instance using Ansible, Insert your keypair name, instance type, security group, AMI image, and instance count
- Step2 : Add the newly created host to deploy group to connect
- Step4 : Connect ec2 instance and exchange ssh key pair
+ Step1 : Create an EC2 instance using Ansible, Insert your keypair name, instance type, security group, AMI image, and instance count.
+ 
+ Step2 : Add the newly created host to deploy group to connect.
+ 
+ Step4 : Connect ec2 instance and exchange ssh key pair.
+ 
  Step5 : Install OpenJDK 8, set JAVA HOME, install nginx and Elasticsearch installation using ansible.
+ 
  Step6 : Making configuration in Elasticsearch and add SSL certificates
 
 
