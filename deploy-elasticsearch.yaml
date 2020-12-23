@@ -37,7 +37,7 @@
       with_items: '{{ ec2.instances }}' 
 
     - name: Breathing room (Ansible uses python apt, has issues running directly after boot)
-      pause: seconds=15
+      pause: seconds=5
 
 - name: Configuring ElasticSearch
   hosts: deploy
