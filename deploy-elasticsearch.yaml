@@ -52,6 +52,13 @@
       apt: update_cache=yes                  # Updating the new instance with apt package-manager
       ignore_errors: yes
 
+    - name: install nginx
+      become: yes
+      apt: 
+        name: nginx
+        purge: yes
+        state: present
+
     
     - name: install java 8                   # installing java as elasticsearch is dependent on java
       become: yes
@@ -85,8 +92,11 @@
         state: present
       notify: restart elasticsearch   # pointing to handlers in order to enable the tsak
     
+
+
   handlers:                           # reference from elasticserach task to restart the service
     - name: restart elasticsearch
       action: service name=elasticsearch state=restarted
 
- 
+    - name: restart nginx             # reference from nginx task to restart the service
+      action: service name=nginx state=restarted
