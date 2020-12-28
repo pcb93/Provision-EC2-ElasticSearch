@@ -2,7 +2,7 @@
 - name: Stage instance(s)
   hosts: localhost                              
   connection: local                   # connection plugin allows ansible to execute tasks on the Ansible ‘controller’
-  gather_facts: false                 # checking information is disabled
+  gather_facts: false                 # checking information is disabled as new machine is getting ready
   
   tasks:
     - name: 'Provision EC2-Instance'  # Brings Up AWS Instance
@@ -14,7 +14,7 @@
         key_name: mykey-NV            # Private key used for ssh
         region: us-east-1
         vpc_subnet_id: subnet-00bebd8f6616120ad
-        wait: yes                     # Wait after provisioning of Instance
+        wait: yes                     # Wait after provisioning of Instance(readiness property)
         assign_public_ip: yes
       register: ec2                   # store the command output in a variable and access it later
 
